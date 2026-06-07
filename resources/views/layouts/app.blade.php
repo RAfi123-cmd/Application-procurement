@@ -15,6 +15,8 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
+        <div id="main-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" 
+            class="hidden overflow-x-hidden fixed inset-x-0 mx-auto top-0 z-50 w-full md:inset-x-0 max-h-screen scroll-m-0"></div>
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             @include('layouts.navigation')
 
@@ -32,5 +34,8 @@
                 {{ $slot }}
             </main>
         </div>
+        @isset($js)
+            {{ $js }}
+        @endisset
     </body>
 </html>
