@@ -66,11 +66,11 @@
                                         <th class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                             {{ $supplier->nomor }}
                                         </th>
-                                        <td class="px-6 py-4">{{ $supplier->nama }}</td>
+                                        <td class="px-6 py-4">{{ $supplier->name }}</td>
                                         <td class="px-6 py-4">{{ $supplier->email }}</td>
-                                        <td class="px-6 py-4">{{ $supplier-alamat }}</td>
-                                        <td class="px-6 py-4">{{ $supplier-pic }}</td>
-                                        <td class="px-6 py-4">{{ $supplier-kontak_pic }}</td>
+                                        <td class="px-6 py-4">{{ $supplier->alamat }}</td>
+                                        <td class="px-6 py-4">{{ $supplier->pic }}</td>
+                                        <td class="px-6 py-4">{{ $supplier->kontak_pic }}</td>
                                         <td class="px-6 py-4">
 
                                         </td>
