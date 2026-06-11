@@ -63,4 +63,14 @@ class SupplierController extends Controller
             return redirect()->back()->with('error', 'Data gagal diubah');
         }
     }
+
+    public function destroy(Supplier $supplier)
+    {
+        try {
+            $supplier->delete();
+            return redirect('supplier')->with('success', 'Data berhasil dihapus');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', 'Data gagal dihapus');
+        }
+    }
 }

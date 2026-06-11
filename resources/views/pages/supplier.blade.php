@@ -73,6 +73,12 @@
                                         <td class="px-6 py-4">{{ $supplier->kontak_pic }}</td>
                                         <td class="px-6 py-4">
                                              <a href="{{ route('supplier.edit', $supplier->id) }}" class="font-medium text-blue-600 me-1 dark:text-blue-500 hover:underline">Edit</a>
+                                             <form action="{{ route('supplier.destroy', $supplier->id) }}" onsubmit="return confirm('Hapus data supplier?')" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <button type="submit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline delete">Hapus</button>
+                                             </form>
+                                        
                                         </td>
                                     </tr>
                                 @endforeach
