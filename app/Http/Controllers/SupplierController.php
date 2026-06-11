@@ -36,4 +36,31 @@ class SupplierController extends Controller
             return redirect()->back()->with('error', 'Data gagal disimpan');
         }
     }
+
+    public function edit(Supplier $supplier)
+    {
+        return view('pages.supplier-form', compact('supplier'));
+    }
+    public function update(Request $request, Supplier $supplier)
+    {
+        $request->validate([
+            'nama_supplier' => 'required|max:255',
+            'email' => 'required|email|max:255',
+            'alamat' => 'required',
+            'pic' => 'required|max:255',
+            'kontak_pic' => 'required|max:15'
+        ]);
+        try {
+            $supplier->fill([
+                'nama' => $request->nama_supplier,
+                'email' => $request->email,
+                'alamat' => $request->alamat,
+                'pic' => $request->pic,
+                'kontak_pic' => $request->kontak_pic
+            ])->save();
+            return redirect('supplier')->with('success', 'Data berhasil diubah');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', 'Data gagal diubah');
+        }
+    }
 }

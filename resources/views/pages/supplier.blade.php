@@ -72,7 +72,7 @@
                                         <td class="px-6 py-4">{{ $supplier->pic }}</td>
                                         <td class="px-6 py-4">{{ $supplier->kontak_pic }}</td>
                                         <td class="px-6 py-4">
-
+                                             <a href="{{ route('supplier.edit', $supplier->id) }}" class="font-medium text-blue-600 me-1 dark:text-blue-500 hover:underline">Edit</a>
                                         </td>
                                     </tr>
                                 @endforeach
